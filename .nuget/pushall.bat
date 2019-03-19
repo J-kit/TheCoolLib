@@ -1,0 +1,1 @@
+for /r %%i in (*.nupkg) do nuget push -Source https://api.nuget.org/v3/index.json -ApiKey oy2ijii4khfdl3d6qjkaqna6mxnp34vexoufcsck3wet5m "%%i"
