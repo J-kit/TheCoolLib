@@ -10,5 +10,13 @@ branches:
 solution: TheCoolLib.sln
 install:
   - nuget restore TheCoolLib.sln
+  
 script:
-    - msbuild TheCoolLib.sln /m /t:Rebuild /p:Configuration=Release
+    - msbuild TheCoolLib.sln /m /t:Rebuild /p:Configuration=Release /p:outputdir=build
+    
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+  on:
+    branch: master
