@@ -9,6 +9,8 @@
     <Description>TheCoolLib does cool stuff</Description>
     <Copyright>TheCoolInc</Copyright>
     <PackageLicenseUrl>cool.org</PackageLicenseUrl>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    
   </PropertyGroup>
 
 
@@ -23,7 +25,13 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45'">
     <DefineConstants>NET45</DefineConstants>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <!-- ... -->
+    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" Condition="'$(TargetFramework)' == 'net40'" />
+    <!-- ... -->
+  </ItemGroup>
+  
   <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="mscorlib" />
     <Reference Include="System" />

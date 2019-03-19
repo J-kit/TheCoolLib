@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace TheCoolLib
 {
@@ -26,6 +27,16 @@ namespace TheCoolLib
 #pragma warning disable CS0162 // Unreachable code detected
             return "none";
 #pragma warning restore CS0162 // Unreachable code detected
+        }
+
+        public Task Delay(int dueTime)
+        {
+#if NET40
+                 return TaskEx.Delay(dueTime);
+#else
+            return Task.Delay(dueTime);
+#endif
+
         }
     }
 }
