@@ -1,0 +1,14 @@
+language: csharp
+matrix:
+  include:
+    - mono: latest
+    
+branches:
+  only:
+    - master
+    
+solution: TheCoolLib.sln
+install:
+  - nuget restore TheCoolLib.sln
+script:
+    - msbuild TheCoolLib.sln /m /t:Rebuild /p:Configuration=Release
