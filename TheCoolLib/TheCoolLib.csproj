@@ -9,7 +9,9 @@
     <Description>TheCoolLib does cool stuff</Description>
     <Copyright>TheCoolInc</Copyright>
     <PackageLicenseUrl>cool.org</PackageLicenseUrl>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.0.1</Version>
     
   </PropertyGroup>
 
@@ -27,9 +29,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <!-- ... -->
     <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" Condition="'$(TargetFramework)' == 'net40'" />
-    <!-- ... -->
   </ItemGroup>
   
   <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
